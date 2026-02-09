@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container header">
+    <div>
+      <h1>Your Name</h1>
+      <p class="subtitle">Student | Course | College</p>
+      <p class="meta">
+        <a href="mailto:youremail@example.com">youremail@example.com</a> ·
+        <a href="https://github.com/YOURUSERNAME" target="_blank" rel="noreferrer">GitHub</a>
+      </p>
+    </div>
+    <button id="themeBtn" class="btn">Toggle theme</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>About Me</h2>
+      <p>
+        Write 4–6 lines about your course, what you’re learning, and what role you want.
+      </p>
+      <ul class="tags">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Teamwork</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>Project 1: Title</h3>
+          <span class="pill">2026</span>
+        </div>
+        <p>1–2 lines: what you built + tools used.</p>
+        <div class="links">
+          <a class="btn small" href="https://github.com/YOURUSERNAME/PROJECT-REPO" target="_blank" rel="noreferrer">Code</a>
+          <a class="btn small outline" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>Project 2: Title</h3>
+          <span class="pill">2026</span>
+        </div>
+        <p>1–2 lines: what you built + what you learned.</p>
+        <div class="links">
+          <a class="btn small" href="#" target="_blank" rel="noreferrer">Code</a>
+          <a class="btn small outline" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Assessment Evidence</h2>
+      <ul>
+        <li>Add PDFs/screenshots in an <code>assets</code> folder</li>
+        <li>Then link them here</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span> Your Name. Built with GitHub Pages.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
