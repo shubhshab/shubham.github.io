@@ -1,11 +1,39 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
 
-const themeBtn = document.getElementById("themeBtn");
-const saved = localStorage.getItem("theme");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-if (saved === "light") document.body.classList.add("light");
+const numbers = "0123456789";
+const fontSize = 16;
+const columns = Math.floor(canvas.width / fontSize);
+const drops = Array(columns).fill(1);
 
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light");
-  localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+function drawMatrix() {
+  /* Dark fade for smooth trail */
+  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#00ff00";
+  ctx.font = fontSize + "px monospace";
+
+  drops.forEach((y, index) => {
+    const text = numbers.charAt(Math.floor(Math.random() * numbers.length));
+    const x = index * fontSize;
+
+    ctx.fillText(text, x, y * fontSize);
+
+    if (y * fontSize > canvas.height && Math.random() > 0.97) {
+      drops[index] = 0;
+    }
+
+    drops[index]++;
+  });
+}
+
+setInterval(drawMatrix, 35);
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
